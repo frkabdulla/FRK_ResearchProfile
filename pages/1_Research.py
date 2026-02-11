@@ -1,16 +1,17 @@
 import streamlit as st
 
-st.title("📚 Research & Publications")
+st.title("📚 Research Overview")
 
 st.markdown("""
-### 2025 Publications
-
-- Machine Learning Techniques for Identifying DDoS Attacks in Cloud Computing  
-- Machine Learning Models for Agro-Climatic Decision Support Systems  
-- Advancing Smart & Sustainable Construction  
-- Innovative Sustainable Materials & Circular Economy  
+My research integrates Artificial Intelligence with Sustainable Systems and Cloud Security.
+The focus is on real-world impact through intelligent and resilient infrastructures.
 """)
 
-st.markdown("---")
+st.markdown("### Core Research Themes")
 
-st.write("Peer Reviewer: Franklin Open, IGI Global")
+st.markdown("""
+- Machine Learning for Agriculture
+- Intelligent Sustainable Construction
+- Cloud-based Security Systems
+- Economic Viability in Built Environments
+""")
