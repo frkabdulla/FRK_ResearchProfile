@@ -1,0 +1,26 @@
+.main-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0A192F;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1D4ED8;
+    margin-top: 30px;
+}
+
+.highlight-box {
+    background-color: #E0F2FE;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    margin-top: 50px;
+}
