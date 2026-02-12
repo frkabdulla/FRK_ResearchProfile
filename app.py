@@ -1,8 +1,9 @@
 import streamlit as st
+import requests
 
 st.set_page_config(
-    page_title="MD Faruk Abdulla | AI Research Hub",
-    page_icon="🎓",
+    page_title="MD Faruk Abdulla | AI Research Lab",
+    page_icon="🚀",
     layout="wide"
 )
 
@@ -10,43 +11,49 @@ st.set_page_config(
 with open("styles/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# HERO SECTION
+# DARK/LIGHT TOGGLE
+mode = st.sidebar.toggle("🌗 Dark Mode", value=True)
+
+if not mode:
+    st.markdown("""
+        <style>
+        body {background:white;color:black;}
+        </style>
+    """, unsafe_allow_html=True)
+
+# HERO
 st.markdown('<div class="main-title">MD Faruk Abdulla</div>', unsafe_allow_html=True)
-st.markdown("### Assistant Professor | AI, Cloud Security & Sustainable Intelligent Systems")
+st.markdown("### AI • Cloud Security • Sustainable Intelligent Systems")
+
+st.image("assets/profile.jpg", use_container_width=False, output_format="JPEG")
 
 st.markdown("---")
 
-# SLIDING BOX – PROFILE
-st.markdown('<div class="slide-box">', unsafe_allow_html=True)
-st.markdown("""
-🎓 **Current Position:** Assistant Professor (IT & CS), Parul University, Vadodara  
-📚 **Research Focus:** Machine Learning, Sustainable Construction, Cloud Security, Agro-Climatic AI Systems  
-🔎 **Scopus Author ID:** https://www.scopus.com/authid/detail.uri?authorId=60171729600  
-🌍 **ORCID:** https://orcid.org/0009-0007-1478-7376  
-
-With multiple 2025 Scopus-indexed publications, my work bridges Artificial Intelligence with real-world sustainable and secure infrastructure challenges.
-""")
-st.markdown("</div>", unsafe_allow_html=True)
-
-# RESEARCH IMPACT SECTION
-st.markdown('<div class="section-title">Research Impact & Domains</div>', unsafe_allow_html=True)
-
-col1, col2 = st.columns(2)
+# COUNTERS
+col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("""
-    🔹 AI-Driven Agro-Climatic Decision Systems  
-    🔹 Machine Learning for DDoS Detection  
-    🔹 Predictive Modeling for Sustainable Infrastructure  
-    """)
+    st.markdown('<div class="counter-box"><h2>6+</h2><p>Publications</p></div>', unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""
-    🔹 Circular Economy in Construction  
-    🔹 Energy Efficient Built Environments  
-    🔹 Secure Cloud Computing Frameworks  
-    """)
+    st.markdown('<div class="counter-box"><h2>3</h2><p>Peer Reviews</p></div>', unsafe_allow_html=True)
+
+with col3:
+    st.markdown('<div class="counter-box"><h2>4</h2><p>Research Domains</p></div>', unsafe_allow_html=True)
 
 st.markdown("---")
 
-st.markdown('<div class="footer">© 2026 MD Faruk Abdulla | AI & Sustainable Computing Research Portal</div>', unsafe_allow_html=True)
+# ABOUT
+st.subheader("About Me")
+
+st.write("""
+Assistant Professor at Parul University (IT & CS).  
+Research integrates Machine Learning, Agro-Climatic Systems,
+Cloud Security, and Sustainable Built Infrastructure.
+
+Scopus Author Profile:
+https://www.scopus.com/authid/detail.uri?authorId=60171729600
+
+ORCID:
+https://orcid.org/0009-0007-1478-7376
+""")
